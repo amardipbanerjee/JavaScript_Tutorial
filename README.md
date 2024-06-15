@@ -117,3 +117,58 @@ Arrow function without 1 parameter and single line:
 ```js
 const testfunc = value => return value * value;
 ```
+
+### Arrow function and this
+
+When we define a callback function inside a method in an object, the callback function is treated as a standalone function.
+
+```js
+const person = {
+  talk() {
+    setTimeout(function () {
+      console.log("this", this); // gives the window object
+    }, 1000);
+  },
+};
+
+person.talk();
+```
+
+Contemporary solution:
+
+```js
+const person = {
+    var self = this;
+  talk() {
+    setTimeout(function () {
+      console.log("self", self); // gives reference to window object
+    }, 1000);
+  },
+};
+
+person.talk();
+```
+
+Arrow function inherit the this keyword by default:
+
+```js
+const person = {
+  talk() {
+    setTimeout(() => {
+      console.log("this", this); // gives reference to window object
+    }, 1000);
+  },
+};
+
+person.talk();
+```
+
+### Array.map
+
+```js
+const colors = ["red", "green", "blue"];
+const items = colors.map((color) => `<li>${color}</li>`);
+console.log(items);
+```
+
+### Object Destructuring
