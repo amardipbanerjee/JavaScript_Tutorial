@@ -73,7 +73,7 @@ const person = {
 person.walk();
 
 const walk = person.walk; // Storing reference to the function not the object
-walk(); // Returns undeifned
+walk(); // Returns undeifned or window object
 ```
 
-The value of 'this' keyword is determined by how a function is called. If we call a functionas a method in an object, it returns a reference to the object. <br/> However if we call a function as a standalone object or outside of an object, 'this' will return the global obect that is the window object in browsers. But in this case we get 'undefined' because the code is executed in JavaScript strict mode which is to execute a code in a more protective way to prevent potential problems.
+The value of 'this' keyword is determined by how a function is called. If we call a functionas a method in an object, it returns a reference to the object. <br/><br/> However if we call a function as a standalone object or outside of an object, 'this' will return the global obect that is the window object in browsers. But in this case we get 'undefined' because the code is executed in JavaScript strict mode which is to execute a code in a more protective way to prevent potential problems.
