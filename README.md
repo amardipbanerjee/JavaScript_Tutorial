@@ -21,3 +21,26 @@ function sayHello() {
 
 console.log(k); // Error k is not deifned
 ```
+
+### Objects
+
+Functions inside objects in OOPs are called methods.
+
+```js
+const person = {
+  name: "Mosh",
+  walk: function () {},
+  talk() {}, // ES6 way of deifining function inside object
+};
+
+// Dot notation of accessing
+person.talk();
+person.name = "";
+
+// Bracket notation of accessing
+const targetMember = "name";
+person["name"] = "John";
+person[targetMember.value] = "John";
+```
+
+Please note that we use the bracket notation when we do not previously know what member of value we are going to access. For example if the member to be changed is being input by an user in a form.
