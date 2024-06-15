@@ -172,3 +172,40 @@ console.log(items);
 ```
 
 ### Object Destructuring
+
+```js
+const address = {
+  street: "",
+  city: "",
+  country: "",
+};
+
+const { street, city, country } = address; // Accessing all object items
+const { street } = address; // Accessing one object item
+const { street: st } = address; // Accessing object items by assigning different name
+```
+
+### Spread Operator
+
+On arrays
+
+```js
+const first = [1, 2, 3];
+const second = [5, 6, 7];
+
+const combined = first.concat(second); //Primitive and tiresome
+const newcombined = [...first, 4, ...second, 8];
+
+const clone = [...first];
+```
+
+On objects:
+
+```js
+const first = { name: "Amardip" };
+const second = { job: "Investment Banker" };
+
+const third = { ...first, ...second }; // Combining
+
+first = { ...first, name: "Amardip Banerjee" }; // Modifying values
+```
