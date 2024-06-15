@@ -209,3 +209,127 @@ const third = { ...first, ...second }; // Combining
 
 first = { ...first, name: "Amardip Banerjee" }; // Modifying values
 ```
+
+### Classes
+
+Class defienes the blueprint of an object.
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  walk() {
+    console.log(`${this.name} is walking now!`);
+  }
+}
+
+const person = new Person("Amardip");
+```
+
+### Inheritance
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  walk() {
+    console.log(`${this.name} is walking now!`);
+  }
+}
+
+const Investmentbanker extends Person{
+    constructor(name, deal){
+        super(name);
+        this.deal = deal;
+    }
+    deal() {
+        console.log(`${this.name} is dealing with ${this.deal}!`);
+    }
+}
+
+const ib = new Investmentbanker("Amardip", "ONGC");
+```
+
+### Modules
+
+person.js
+
+```js
+export class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  walk() {
+    console.log(`${this.name} is walking now!`);
+  }
+}
+```
+
+ibs.js
+
+```js
+import {Person} from './person'
+
+export const Investmentbanker extends Person{
+    constructor(name, deal){
+        super(name);
+        this.deal = deal;
+    }
+    deal() {
+        console.log(`${this.name} is dealing with ${this.deal}!`);
+    }
+}
+```
+
+index.js
+
+```js
+import { Investmentbanker } from "./ibs";
+
+const ib = new Investmentbanker("Amardip", "ONGC");
+```
+
+Please note that these are named exports.
+
+### Default Exports
+
+person.js
+
+```js
+export default class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  walk() {
+    console.log(`${this.name} is walking now!`);
+  }
+}
+```
+
+ibs.js
+
+```js
+import Person from './person'
+
+export default const Investmentbanker extends Person{
+    constructor(name, deal){
+        super(name);
+        this.deal = deal;
+    }
+    deal() {
+        console.log(`${this.name} is dealing with ${this.deal}!`);
+    }
+}
+```
+
+index.js
+
+```js
+import Investmentbanker from "./ibs";
+
+const ib = new Investmentbanker("Amardip", "ONGC");
+```
+
+In case of default exports we may use different names. For example we may use 'Human' instead of 'Person' in ibs.js file.
