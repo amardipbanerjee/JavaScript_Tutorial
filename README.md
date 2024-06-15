@@ -1,6 +1,6 @@
 # JavaScript Tutorial
 
-### let vs var vs const
+## let vs var vs const
 
 'var' has a global scope but is limited to the function inside which it is defined.
 'let' and 'const' both have a block level scope.
@@ -22,7 +22,7 @@ function sayHello() {
 console.log(k); // Error k is not deifned
 ```
 
-### Objects
+## Objects
 
 Functions inside objects in OOPs are called methods.
 
@@ -45,7 +45,7 @@ person[targetMember.value] = "John";
 
 Please note that we use the bracket notation when we do not previously know what member of value we are going to access. For example if the member to be changed is being input by an user in a form.
 
-### this keyword
+## this keyword
 
 Here 'this' will return a reference to the person object.
 
@@ -78,7 +78,7 @@ walk(); // Returns undeifned or window object
 
 The value of 'this' keyword is determined by how a function is called. If we call a functionas a method in an object, it returns a reference to the object. <br/><br/> However if we call a function as a standalone object or outside of an object, 'this' will return the global obect that is the window object in browsers. But in this case we get 'undefined' because the code is executed in JavaScript strict mode which is to execute a code in a more protective way to prevent potential problems.
 
-### Binding this
+## Binding this
 
 Every method or function in JavScript is also an object. They have properties and methods. So we can use the '.bind' propety to bind a function to an object, which, in this case is the 'person' object.
 
@@ -98,7 +98,7 @@ walk();
 
 With the bind methos we set the value of 'this' parmanently. It does depend on the argument we pass (in this case, the 'person' object).
 
-### Arrow Functions
+## Arrow Functions
 
 Arrow functions are in ES6 module which helps to create a clean code specially in filter and map methods.
 <br/>
@@ -118,7 +118,7 @@ Arrow function without 1 parameter and single line:
 const testfunc = value => return value * value;
 ```
 
-### Arrow function and this
+## Arrow function and this
 
 When we define a callback function inside a method in an object, the callback function is treated as a standalone function.
 
@@ -163,7 +163,7 @@ const person = {
 person.talk();
 ```
 
-### Array.map
+## Array.map
 
 ```js
 const colors = ["red", "green", "blue"];
@@ -171,7 +171,7 @@ const items = colors.map((color) => `<li>${color}</li>`);
 console.log(items);
 ```
 
-### Object Destructuring
+## Object Destructuring
 
 ```js
 const address = {
@@ -185,7 +185,7 @@ const { street } = address; // Accessing one object item
 const { street: st } = address; // Accessing object items by assigning different name
 ```
 
-### Spread Operator
+## Spread Operator
 
 On arrays
 
@@ -210,7 +210,7 @@ const third = { ...first, ...second }; // Combining
 first = { ...first, name: "Amardip Banerjee" }; // Modifying values
 ```
 
-### Classes
+## Classes
 
 Class defienes the blueprint of an object.
 
@@ -227,7 +227,7 @@ class Person {
 const person = new Person("Amardip");
 ```
 
-### Inheritance
+## Inheritance
 
 ```js
 class Person {
@@ -252,7 +252,7 @@ const Investmentbanker extends Person{
 const ib = new Investmentbanker("Amardip", "ONGC");
 ```
 
-### Modules
+## Modules
 
 person.js
 
@@ -293,7 +293,7 @@ const ib = new Investmentbanker("Amardip", "ONGC");
 
 Please note that these are named exports.
 
-### Default Exports
+## Default Exports
 
 person.js
 
